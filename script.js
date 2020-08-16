@@ -103,12 +103,7 @@ keys.addEventListener("click", (e) => {
 			const clearButton = calculator.querySelector("[data-action=clear]");
 			clearButton.textContent = "CE";
 
-			console.log("not clear");
-			console.log("displayedNum", displayedNum);
-			console.log("previousKeyType", calculator.dataset.previousKeyType);
-			console.log("previousKey", calculator.dataset.previousKey);
-			console.log("firstValue", calculator.dataset.firstValue);
-			console.log("key content", key.textContent);
+			
 		}
 		// Clear display and reset values if AC value present otherwise set clear key to AC
 		if (action === "clear") {
@@ -123,8 +118,7 @@ keys.addEventListener("click", (e) => {
 
 			display.textContent = 0;
 			calculator.dataset.previousKeyType = "clear";
-			console.log("clear");
-			console.log("displayedNum", displayedNum);
+			
 		}
 
 		// Run calulate function after equal sign is pressed
