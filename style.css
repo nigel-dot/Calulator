@@ -118,6 +118,12 @@ body {
 	-webkit-box-pack: center;
 	justify-content: center;
 }
+.container > h1 {
+	padding-top: 100px;
+
+	text-align: center;
+	color: white;
+}
 
 .container {
 	max-width: 20em;
@@ -146,7 +152,7 @@ body {
 }
 
 .calculator__keys {
-	height: 400px;
+	height: 350px;
 	background-color: #999;
 	display: grid;
 	grid-gap: 1px;
