@@ -1,3 +1,5 @@
+// import calculate function from utils.js file
+import { calculate } from "./utils.js";
 // setup constants for Event Listener
 const calculator = document.querySelector(".calculator");
 const keys = calculator.querySelector(".calculator__keys");
@@ -16,17 +18,6 @@ keys.addEventListener("click", (e) => {
 		Array.from(key.parentNode.children).forEach((k) =>
 			k.classList.remove("is-depressed")
 		);
-
-		// Calculate function - which operator as been clicked
-		// perform calculation with first and second numbers and return outcome
-		const calculate = (n1, operator, n2) => {
-			const firstNum = parseFloat(n1);
-			const secondNum = parseFloat(n2);
-			if (operator === "add") return firstNum + secondNum;
-			if (operator === "subtract") return firstNum - secondNum;
-			if (operator === "multiply") return firstNum * secondNum;
-			if (operator === "divide") return firstNum / secondNum;
-		};
 
 		// If the key has a data-action that is either add, subtract, multiply or divide,
 		// we know the key is an operator.
@@ -85,7 +76,7 @@ keys.addEventListener("click", (e) => {
 			calculator.dataset.previousKey = "number";
 		}
 
-		// if decimal point clicked stop it from being able to be clicked multiple times
+		//if decimal point clicked stop it from being able to be clicked multiple times
 		if (action === "decimal") {
 			if (!displayedNum.includes(".")) {
 				display.textContent = displayedNum + ".";
@@ -102,9 +93,8 @@ keys.addEventListener("click", (e) => {
 		if (action !== "clear") {
 			const clearButton = calculator.querySelector("[data-action=clear]");
 			clearButton.textContent = "CE";
-
-			
 		}
+
 		// Clear display and reset values if AC value present otherwise set clear key to AC
 		if (action === "clear") {
 			if (key.textContent === "AC") {
@@ -118,7 +108,6 @@ keys.addEventListener("click", (e) => {
 
 			display.textContent = 0;
 			calculator.dataset.previousKeyType = "clear";
-			
 		}
 
 		// Run calulate function after equal sign is pressed
